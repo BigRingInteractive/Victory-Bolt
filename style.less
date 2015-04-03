@@ -1,0 +1,631 @@
+// CORE VARIABLES / MIXINS
+@import "less/variables.less";
+@import "less/mixins.less";
+
+/* RESET / DEPENDENCIES
+-------------------------------------------------- */
+@import "less/normalize.less";
+@import "less/print.less";
+@import "less/glyphicons.less";
+
+/* CORE CSS
+-------------------------------------------------- */
+@import "less/scaffolding.less";
+@import "less/type.less";
+@import "less/code.less";
+@import "less/grid.less";
+@import "less/tables.less";
+@import "less/forms.less";
+@import "less/buttons.less";
+
+/* COMPONETS
+-------------------------------------------------- */
+@import "less/component-animations.less";
+@import "less/dropdowns.less";
+@import "less/button-groups.less";
+@import "less/input-groups.less";
+@import "less/navs.less";
+@import "less/navbar.less";
+@import "less/breadcrumbs.less";
+@import "less/pagination.less";
+@import "less/pager.less";
+@import "less/labels.less";
+@import "less/badges.less";
+@import "less/jumbotron.less";
+@import "less/thumbnails.less";
+@import "less/alerts.less";
+@import "less/progress-bars.less";
+@import "less/media.less";
+@import "less/list-group.less";
+@import "less/panels.less";
+@import "less/responsive-embed.less";
+@import "less/wells.less";
+@import "less/close.less";
+
+/* JAVASCRIPT COMPONETS
+-------------------------------------------------- */
+@import "less/modals.less";
+@import "less/tooltip.less";
+@import "less/popovers.less";
+@import "less/carousel.less";
+
+/* UTILITY CLASSES
+-------------------------------------------------- */
+@import "less/utilities.less";
+@import "less/responsive-utilities.less";
+@import "less/fonts.less";
+
+/* OWL CAROUSEL
+-------------------------------------------------- */
+@import (less) "css/owl.carousel.css";
+@import (less) "css/owl.theme.css";
+
+/* VARIABLES
+-------------------------------------------------- */
+@primary:#68111f;
+@secondary:#95292e;
+@tertiary:#b70336;
+@tertiary-light:#f6484d;
+@white:#ffffff;
+@gray-bg: #f5f5f5;
+@footer-red: #610e1d;
+@font1:'Source Sans Pro', sans-serif;
+
+/* CLEARFIX
+-------------------------------------------------- */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
+/* GLOBAL
+-------------------------------------------------- */
+body {
+    background:url('images/victory-bolt-bg.jpg');
+    .right {
+        text-align:right;
+    }
+    .left {
+        text-align:left;
+    }
+    .center {
+        text-align:center;
+    }
+    figure {
+        float:right;
+        border:solid 1px #eaeaea;
+        margin:10px;
+        display:block;
+        figcaption {
+            background:#eaeaea;
+            padding:10px;
+        }
+    }
+}
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 0;
+}
+p {
+    font-family:@font1;
+}
+strong {
+    font-family:@font1;
+}
+/* TOP NAV
+-------------------------------------------------- */
+.navbar-default {
+    margin-bottom:0;
+    background:@primary;
+    border-bottom:0 !important;
+    .navbar-nav {
+        li {
+            a {
+                color:@white;
+                text-transform:uppercase;
+                border-right:solid 1px @secondary;
+                padding-left:27px;
+                padding-right:27px;
+            }
+            a:hover {
+                background:@secondary;
+                color:@white;
+            }
+            @media (max-width:1170px) {
+                font-size:10px !important;
+            }
+            @media (max-width:991px) {
+                a {
+                    padding-left:12px;
+                    padding-right:12px;
+                }
+            }
+        }
+        li:first-child {
+            a {
+                border-left:solid 1px @secondary;
+            }
+        }
+        .open {
+            a,a:focus {
+                background-color:@primary;
+                color:#fff;
+            }
+            a:hover {
+                background-color:@secondary;
+            }
+            .dropdown-menu {
+                padding:0;
+                border:solid 1px @secondary;
+                li {
+                    border-bottom:solid 1px @secondary;
+                    &:last-child {
+                        border-bottom:0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) {
+    .bs-fix {
+        display:none;
+    }
+}
+
+/* HEADER
+-------------------------------------------------- */
+.header {
+    background:@white;
+    padding:5px 0;
+    .logo {
+        img {
+            max-width:100%;
+            height:auto;
+        }
+    }
+    .accredation {
+        img {
+            height:75px;
+            width:auto;
+            margin-top:15px;
+            @media(max-width:992px){
+                max-width:100px;
+                height:auto;
+                margin-top:7px;
+            }
+        }
+    }
+}
+
+/* HEADER
+-------------------------------------------------- */
+.victory-bolt-carousel {
+    .item {
+        .carousel-caption {
+            font-family:@font1;
+            font-size:60px;
+            line-height:70px;
+            font-weight:900;
+            text-align:left;
+            left:10%;
+            bottom:20%;
+        }
+        @media (max-width:991px) {
+            .carousel-caption {
+                bottom:10%;
+                font-size:48px;
+                line-height:60px;
+                img {
+                    max-width:140px;
+                    height:auto;
+                }
+            }
+        }
+        @media (max-width:767px) {
+            .carousel-caption {
+                bottom:5%;
+                font-size:24px;
+                line-height:28px;
+                img {
+                    max-width:80px;
+                    height:auto;
+                }
+            }
+
+        }
+    }
+}
+@media (min-width:768px) {
+    .carousel-indicators {
+        position:absolute;
+        left:70%;
+        width:20%;
+    }
+}
+@media (max-width:767px) {
+    .carousel-indicators {
+        display:none !important;
+    }
+}
+/* PANEL INNER
+-------------------------------------------------- */
+.panel-inner(@color, @padding) {
+    .panel-inner {
+        background:@color;
+        padding:@padding;
+    }
+}
+
+/* ABOUT PANEL
+-------------------------------------------------- */
+.about-panel {
+    .col-md-12 {
+        .panel-inner(@white, 30px);
+        .panel-inner {
+            blockquote {
+                border-left:0 !important;
+                text-transform:uppercase;
+                font-family:@font1;
+                font-size:34px;
+                font-weight:900;
+                margin-top:30px;
+                padding:0;
+                line-height:36px;
+            }
+            @media (max-width:767px) {
+                blockquote {
+                    font-size:18px;
+                    line-height:24px;
+                }
+            }
+        }
+    }
+}
+
+/* BLOG PANEL
+-------------------------------------------------- */
+.blog-panel {
+    .col-md-12 {
+        .panel-inner(@gray-bg, 30px 30px 45px);
+    }
+}
+
+/* CAROUSEL
+-------------------------------------------------- */
+#owl-demo {
+    margin-top:30px;
+}
+.owl-item {
+    .col-md-6 {
+        padding-left:0;
+        img {
+            max-width:100%;
+            height:auto;
+            margin:0 auto;
+            display:block;
+        }
+        h2 {
+            font-size:20px;
+            font-weight:900;
+            text-transform:uppercase;
+            margin-top:10px;
+
+        }
+        a {
+            text-transform:uppercase;
+            color:@secondary;
+            font-family:@font1;
+            font-weight:900;
+        }
+    }
+    @media (max-width:767px){
+        .col-md-6 {
+            padding:0;
+            img {
+                max-width:100% !important
+            }
+        }
+        
+    }
+}
+.carousel-indicators {
+    margin-left:0 !important;
+}
+
+/* CATALOG
+-------------------------------------------------- */
+.page {
+    .wrapper-inner {
+        background:#fff;
+        padding:0px 0 50px;
+        aside {
+            padding:10px;
+            border:dotted 1px #333;
+            ul {
+                margin:0;
+                padding:0;
+                list-style:none;
+                font-family:@font1;
+                li {
+                    a {
+                        color:#333 !important;
+                    }
+                    a:hover {
+                        color:@tertiary !important;
+                    }
+                    font-weight:900;
+                    text-transform:uppercase;
+                    ul {
+                        margin:0;
+                        padding:0;
+                        margin:0 10px;
+                        li {
+                            a {
+                                font-weight:900;
+                                text-transform:none !important;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .top-image {
+            margin-bottom:30px;
+            img {
+                max-width:100%;
+                height:auto;
+            }
+        }
+        h1 {
+            padding:0;
+            margin:0;
+            font-family:@font1;
+            font-weight:900;
+            font-size:28px;
+            color:@tertiary;
+            margin-bottom:10px;
+        }
+        h2 {
+            font-family:@font1;
+            color:@tertiary;
+            text-transform:uppercase;
+            font-weight:900;
+            font-size:22px;
+        }
+        p {
+            font-family:@font1;
+            font-size:16px;
+        }
+        a {
+            color:@tertiary-light !important;
+        }
+        strong {
+            a {
+                font-weight:900;
+                font-size:16px;
+                color:@tertiary-light  !important;
+                text-transform:uppercase;
+            }
+        }
+        .price-listing {
+            .col-md-6 {
+                margin:25px 0;
+                p:nth-child(2) {
+                    margin-top:-10px;
+                }
+            }
+        }
+        .tech-info {
+            img {
+                max-width:100%;
+                height:auto;
+            }
+            .scroll-top {
+                display:block;
+                margin:5px 0 10px;
+            }
+        }
+        .listing {
+            img {
+                max-width:100%;
+            }
+            .catalog-item {
+                .catalog-image-wrap {
+                    border-top:solid 1px #ccc;
+                    border-left:solid 1px #ccc;
+                    border-right:solid 1px #ccc;
+                    width:100%;
+                    text-align:center;
+                    background:#fff;
+                }
+                .catalog-item-name {
+                    text-align:center;
+                    background:@tertiary;
+                    display:block;
+                    padding:5px;
+                    color:#fff;
+                    font-family:@font1;
+                    text-transform:uppercase;
+                }
+                .catalog-item-desc {
+                    padding:5px 0;
+                    font-family:@font1;
+                    font-size:16px;
+                    min-height:240px;
+                    strong {
+                        text-transform:uppercase;
+                        color:@tertiary;
+                    }
+                }
+                @media (max-width:767px) {
+                    .catalog-item-desc {
+                        min-height:150px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* FOOTER INNER
+-------------------------------------------------- */
+.footer {
+    margin-bottom:30px;
+    .col-md-12 {
+        .panel-inner(@footer-red, 30px 0px 25px);
+        .panel-inner {
+            .footer-nav {
+                float:right;
+                margin-top:-46px;
+                a {
+                    display:inline-block;
+                }
+            }
+            display:block;
+            strong {
+                color:@white;
+                font-size:18px;
+            }
+            p {
+                color:@white;
+                text-transform:uppercase;
+                font-size:12px;
+            }
+            .add-on .input-group-btn > .btn {
+                border-left-width:0;left:-2px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            }
+            /* stop the glowing blue shadow */
+            .add-on .form-control:focus {
+                box-shadow:none;
+                -webkit-box-shadow:none; 
+                border-color:#cccccc; 
+            }
+            form.navbar-form {
+                text-align:center;
+                margin-top:16px;
+            }
+        }
+    }
+}
+
+
+.owl-theme .owl-controls{
+    text-align: center;
+}
+
+/* Styling Next and Prev buttons */
+
+.owl-theme .owl-controls .owl-buttons div{
+    color: #FFF;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;/*IE7 life-saver */
+    margin: -15px 5px 5px;
+    padding: 3px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: #869791;
+    filter: Alpha(Opacity=50);/*IE7 fix*/
+    opacity: 0.5;
+}
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+    filter: Alpha(Opacity=100);/*IE7 fix*/
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* Styling Pagination*/
+
+.owl-theme .owl-controls .owl-page{
+    display: inline-block;
+    zoom: 1;
+    *display: inline;/*IE7 life-saver */
+}
+.owl-theme .owl-controls .owl-page span{
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 5px 7px;
+    filter: Alpha(Opacity=50);/*IE7 fix*/
+    opacity: 0.5;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #869791;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+    filter: Alpha(Opacity=100);/*IE7 fix*/
+    opacity: 1;
+}
+
+/* If PaginationNumbers is true */
+
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+    height: auto;
+    width: auto;
+    color: #FFF;
+    padding: 2px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+/* preloading images */
+.owl-item.loading{
+    min-height: 150px;
+    background: url(AjaxLoader.gif) no-repeat center center
+}
+
+#owl-demo .owl-item > div img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom:4px;
+}
+
+#owl-demo .owl-item > div{
+  margin:3px;
+  border:1px white;
+}
+
+.wrapper-with-margin{
+  margin:0px 50px;
+}
+
+ 
+.owl-theme .owl-controls .owl-buttons div {
+  position: absolute;
+}
+ 
+.owl-theme .owl-controls .owl-buttons .owl-prev{
+  left: -45px;
+  top: 55px; 
+}
+ 
+.owl-theme .owl-controls .owl-buttons .owl-next{
+  right: -45px;
+  top: 55px;
+}

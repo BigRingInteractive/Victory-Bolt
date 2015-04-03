@@ -1,0 +1,36 @@
+/* Avenir 
+@font-face {
+    font-family: 'corbel';
+    src: url('fonts/corbel-webfont.eot');
+    src: url('fonts/corbel-webfont.eot?#iefix') format('eot'),
+         url('fonts/corbel-webfont.woff') format('woff'),
+         url('fonts/corbel.ttf') format('truetype'),
+         url('fonts/corbel-webfont.svg#webfontc0f9s3aJ') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'corbelbold';
+    src: url('fonts/corbelbold-webfont.eot');
+    src: url('fonts/corbelbold-webfont.eot?#iefix') format('eot'),
+         url('fonts/corbelbold-webfont.woff') format('woff'),
+         url('fonts/corbelbold.ttf') format('truetype'),
+         url('fonts/corbelbold-webfont.svg#webfontc0f9s3aJ') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+
+.fontface(@fontname, @fontfile) {
+        font-family: '@{fontname}';
+        src: url('../fonts/@{fontfile}-webfont.eot');
+        src: url('../fonts/@{fontfile}-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/@{fontfile}-webfont.woff') format('woff'),
+             url('../fonts/@{fontfile}-webfont.ttf') format('truetype'),
+             url('../fonts/@{fontfile}-webfont.svg#@{fontname}') format('svg');
+        font-weight: normal;
+        font-style: normal;
+}
